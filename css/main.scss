@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* SELECCIONAMOS TODO EL CUERPO PARA QUE SE USE LAS GOOGLE FONTS EN TODA LA PAGINA*/
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+.centerbtn {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(61, 31, 31);
+  width: 100%;
+}
+h2 {
+  padding-top: 20px;
+  font-size: clamp(10px, 30px, 35px);
+  color: blanchedalmond;
+}
+/* BARRA DE NAVEGACIÓN CON BOOTSTRAP*/
+.barranav {
+  &__img {
+    &--logosize {
+      img {
+        width: clamp(80px, 25vw, 200px);
+        padding: 0.5vw 2vw 0.5vw 2vw;
+      }
+    }
+  }
+}
+
+/* flex-end PARA QUE TODOS LOS LINKS DE LA NavBar SE HAGAN A LA DERECHA*/
+#navbarNavAltMarkup {
+  justify-content: flex-end;
+  padding-right: 2vw;
+}
+/*BOTONES QUE SE OCUPARAN EN TODA LA PAGINA*/
+.btn {
+  text-decoration: none;
+  color: rgb(245, 154, 42);
+  font-weight: 700;
+  font-size: 1.25rem;
+  position: relative;
+  margin: 32px;
+}
+.btn:hover {
+  color: rgb(238, 181, 106);
+}
+.btn::before,
+.btn::after {
+  border: 3px solid rgb(245, 132, 57);
+  content: "";
+  position: absolute;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+.btn:hover::after {
+  transform: translate(-5px, -5px);
+}
+.btn:hover::before {
+  transform: translate(5px, 5px);
+}
+/*BACKGROUND DE LA PORTADA UNA IMAGEN FIJADA CON UN
+COLOR OVERLAY PARA QUE SE PUEDA VER LOS ELEMENTOS DE ARRIBA*/
+/*PORTADA DE LA PAGINA CON NUEVO ALBUM Y TITULO CON BOTON A ESCUCHAR*/
+.portada {
+  display: flex;
+  justify-content: space-evenly;
+  background: center center;
+  background-size: 1700px;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  &__overlay {
+    padding-inline: 10vw;
+    width: inherit;
+    height: inherit;
+    display: grid;
+    gap: 10vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "__img __titulo";
+    justify-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+  &__img {
+    /*contenedor de la imagen siguiendo BEM*/
+    grid-area: __img;
+    &--size {
+      /*editor de la imagen siguiendo BEM*/
+      width: clamp(300px, 37vw, 450px);
+    }
+  }
+  /* MODIFICACIONES DE TODO EL TEXTO QUE ESTA EN LA PORTADA*/
+  &__titulo {
+    grid-area: __titulo;
+    &--h1 {
+      font-weight: 700;
+      font-size: clamp(20px, 55px, 56px);
+      letter-spacing: (1vw);
+      color: rgb(214, 153, 79);
+    }
+    &--h2 {
+      font-size: clamp(15px, 40px, 45px);
+      color: blanchedalmond;
+    }
+    &--h3 {
+      font-size: clamp(1.3rem, 2vw, 10vw);
+      color: blanchedalmond;
+    }
+  }
+}
+/*MEDIA QUERY PARA ACOMODAR LOS ELEMENTOS EN COLUMNA DESPUES DE 575PX*/
+@media only screen and (max-width: 575px) {
+  .portada__overlay {
+    padding: 10vh 0 10vh 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "__img"
+      "__titulo";
+  }
+  .portada {
+    height: 100vh;
+  }
+}
+/*INICIO DE ESTILOS PÁRA SECCION 1*/
+.section1 {
+  background-color: rgb(61, 31, 31);
+  padding: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    padding-bottom: 1vw;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vh, 15vh);
+    letter-spacing: (1vw);
+    color: rgb(214, 153, 79);
+  }
+}
+.ultimolanzamiento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+  grid-template-areas: "album_img review";
+  justify-items: center;
+  &__img {
+    display: flex;
+    flex-direction: column;
+    &--img {
+      width: clamp(300px, 37vw, 450px);
+      border-style: double;
+      border-width: 10px;
+      border-color: antiquewhite;
+    }
+  }
+  &__review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    h2 {
+      color: blanchedalmond;
+    }
+    &--review {
+      font-size: clamp(1rem, 1.1vw, 2rem);
+      color: blanchedalmond;
+    }
+  }
+}
+@media only screen and (max-width: 836px) {
+  .ultimolanzamiento {
+    padding: 2vh 0 2vh 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "album_img"
+      "review";
+    &__review {
+      margin: 0px;
+    }
+    &__img {
+      margin: 0%;
+    }
+  }
+}
+/*CSS PARA LAS TARJETAS DE PRODUCTOS*/
+.content {
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 19px 10px rgba(0, 0, 0, 0.22);
+  transition: 0.4s;
+  background: #5a3333;
+  h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    color: blanchedalmond;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    text-align: center;
+    margin: auto;
+    display: block;
+  }
+  p {
+    text-align: center;
+    color: rgb(235, 181, 101);
+    padding: 8px;
+  }
+  h6 {
+    font-size: 26px;
+    text-align: center;
+    color: blanchedalmond;
+    margin: 0;
+  }
+  button {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(248, 137, 72);
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .buy {
+    background: #722f2f;
+  }
+}
+/*MEDIA QUERIES PARA AJUSTAR LAS TARJETAS DE PRODUCTOS A LA PAGINA*/
+@media (max-width: 1000px) {
+  .content {
+    width: 45%;
+  }
+}
+@media (max-width: 750px) {
+  .content {
+    width: 100%;
+  }
+}
+/* PEQUEÑA ANIMACION DE HOVER PARA LAS TARJETAS DE PRODUCTOS*/
+.content:hover {
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, -8px);
+}
+.album {
+  background-color: rgb(61, 31, 31);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  h1 {
+    padding-bottom: 1vw;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vh, 15vh);
+    letter-spacing: (1vw);
+    color: rgb(214, 153, 79);
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+}
+/*TEMPLATE PARA PONER TIRULOS ENTRE MEDIO DE LA PAGINA*/
+.title {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(61, 31, 31);
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+  width: 100%;
+  h1 {
+    padding-bottom: 1vw;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vh, 15vh);
+    letter-spacing: (1vw);
+    color: rgb(214, 153, 79);
+  }
+}
+/* CSS PARA ACOMODAR LOS DETALLES DE LAS FECHAS DE TOUR, USANDO GRID*/
+.tour {
+  margin: 0;
+  background-color: rgb(61, 31, 31);
+}
+.tour__date {
+  background-color: rgb(61, 31, 31);
+  border-bottom: double 10px #dad099da;
+  display: grid;
+  padding-top: 25px;
+  padding-bottom: 0px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1px 0.1fr;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "estado dash dash"
+    "dash2 fecha boletos"
+    "venue dash3 dash3";
+  .estado {
+    grid-area: estado;
+  }
+  .venue {
+    grid-area: venue;
+  }
+  .dash {
+    grid-area: dash;
+  }
+  .dash2 {
+    grid-area: dash2;
+  }
+  .dash3 {
+    grid-area: dash3;
+  }
+  .fecha {
+    grid-area: fecha;
+  }
+  .boletos {
+    grid-area: boletos;
+  }
+  p {
+    color: blanchedalmond;
+  }
+}
+/*A JUSTE CON MEDIA QUERIES PARA REACOMODAR LA INFORMACION DE LAS FECHAS DE TOUR*/
+@media only screen and (max-width: 699px) {
+  .tour__date {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1px 0.1fr;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "estado dash"
+      "venue  boletos"
+      "fecha dash3";
+  }
+}
+/*HEADER Y REDES SOCIALES EN EL FONDO DE LA PANTALLA*/
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(61, 31, 31);
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  a {
+    padding: 2rem;
+    img {
+      width: 100px;
+    }
+  }
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(173, 84, 51);
+  width: 100vw;
+  height: 10rem;
+}
+footer p {
+  color: antiquewhite;
+  font-weight: 2px;
+  padding-left: 20px;
+}
+footer li {
+  list-style: none;
+  padding: 5px 0;
+}
+footer li a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+.portada {
+  &--2 {
+    height: 50vh;
+  }
+}
+.portada {
+  &__overlay2 {
+    padding-inline: 10vw;
+    width: inherit;
+    height: inherit;
+    display: grid;
+    gap: 10vw;
+    grid-template-columns: 1fr;
+    grid-template-areas: "__img __titulo";
+    justify-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+}

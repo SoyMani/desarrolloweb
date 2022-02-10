@@ -1,0 +1,550 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* SELECCIONAMOS TODO EL CUERPO PARA QUE SE USE LAS GOOGLE FONTS EN TODA LA PAGINA*/
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.centerbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3d1f1f;
+  width: 100%;
+}
+
+h2 {
+  padding-top: 20px;
+  font-size: clamp(10px, 30px, 35px);
+  color: blanchedalmond;
+}
+
+/* BARRA DE NAVEGACIÓN CON BOOTSTRAP*/
+.barranav__img--logosize img {
+  width: clamp(80px, 25vw, 200px);
+  padding: 0.5vw 2vw 0.5vw 2vw;
+}
+
+/* flex-end PARA QUE TODOS LOS LINKS DE LA NavBar SE HAGAN A LA DERECHA*/
+#navbarNavAltMarkup {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 2vw;
+}
+
+/*BOTONES QUE SE OCUPARAN EN TODA LA PAGINA*/
+.btn {
+  text-decoration: none;
+  color: #f59a2a;
+  font-weight: 700;
+  font-size: 1.25rem;
+  position: relative;
+  margin: 32px;
+}
+
+.btn:hover {
+  color: #eeb56a;
+}
+
+.btn::before,
+.btn::after {
+  border: 3px solid #f58439;
+  content: "";
+  position: absolute;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.btn:hover::after {
+  -webkit-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+}
+
+.btn:hover::before {
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+}
+
+/*BACKGROUND DE LA PORTADA UNA IMAGEN FIJADA CON UN
+COLOR OVERLAY PARA QUE SE PUEDA VER LOS ELEMENTOS DE ARRIBA*/
+/*PORTADA DE LA PAGINA CON NUEVO ALBUM Y TITULO CON BOTON A ESCUCHAR*/
+.portada {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: center center;
+  background-size: 1700px;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  /* MODIFICACIONES DE TODO EL TEXTO QUE ESTA EN LA PORTADA*/
+}
+
+.portada__overlay {
+  padding-inline: 10vw;
+  width: inherit;
+  height: inherit;
+  display: -ms-grid;
+  display: grid;
+  gap: 10vw;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "__img __titulo";
+  justify-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.portada__img {
+  /*contenedor de la imagen siguiendo BEM*/
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: __img;
+}
+
+.portada__img--size {
+  /*editor de la imagen siguiendo BEM*/
+  width: clamp(300px, 37vw, 450px);
+}
+
+.portada__titulo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: __titulo;
+}
+
+.portada__titulo--h1 {
+  font-weight: 700;
+  font-size: clamp(20px, 55px, 56px);
+  letter-spacing: 1vw;
+  color: #d6994f;
+}
+
+.portada__titulo--h2 {
+  font-size: clamp(15px, 40px, 45px);
+  color: blanchedalmond;
+}
+
+.portada__titulo--h3 {
+  font-size: clamp(1.3rem, 2vw, 10vw);
+  color: blanchedalmond;
+}
+
+/*MEDIA QUERY PARA ACOMODAR LOS ELEMENTOS EN COLUMNA DESPUES DE 575PX*/
+@media only screen and (max-width: 575px) {
+  .portada__overlay {
+    padding: 10vh 0 10vh 0;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "__img" "__titulo";
+  }
+  .portada {
+    height: 100vh;
+  }
+}
+
+/*INICIO DE ESTILOS PÁRA SECCION 1*/
+.section1 {
+  background-color: #3d1f1f;
+  padding: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section1 h1 {
+  padding-bottom: 1vw;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vh, 15vh);
+  letter-spacing: 1vw;
+  color: #d6994f;
+}
+
+.ultimolanzamiento {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+      grid-template-areas: "album_img review";
+  justify-items: center;
+}
+
+.ultimolanzamiento__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ultimolanzamiento__img--img {
+  width: clamp(300px, 37vw, 450px);
+  border-style: double;
+  border-width: 10px;
+  border-color: antiquewhite;
+}
+
+.ultimolanzamiento__review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.ultimolanzamiento__review h2 {
+  color: blanchedalmond;
+}
+
+.ultimolanzamiento__review--review {
+  font-size: clamp(1rem, 1.1vw, 2rem);
+  color: blanchedalmond;
+}
+
+@media only screen and (max-width: 836px) {
+  .ultimolanzamiento {
+    padding: 2vh 0 2vh 0;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "album_img" "review";
+  }
+  .ultimolanzamiento__review {
+    margin: 0px;
+  }
+  .ultimolanzamiento__img {
+    margin: 0%;
+  }
+}
+
+/*CSS PARA LAS TARJETAS DE PRODUCTOS*/
+.content {
+  width: 20%;
+  margin: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  padding-top: 10px;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 19px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 19px 10px rgba(0, 0, 0, 0.22);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background: #5a3333;
+}
+
+.content h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+  color: blanchedalmond;
+}
+
+.content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 25px;
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+.content p {
+  text-align: center;
+  color: #ebb565;
+  padding: 8px;
+}
+
+.content h6 {
+  font-size: 26px;
+  text-align: center;
+  color: blanchedalmond;
+  margin: 0;
+}
+
+.content button {
+  text-align: center;
+  font-size: 24px;
+  color: #f88948;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.content .buy {
+  background: #722f2f;
+}
+
+/*MEDIA QUERIES PARA AJUSTAR LAS TARJETAS DE PRODUCTOS A LA PAGINA*/
+@media (max-width: 1000px) {
+  .content {
+    width: 45%;
+  }
+}
+
+@media (max-width: 750px) {
+  .content {
+    width: 100%;
+  }
+}
+
+/* PEQUEÑA ANIMACION DE HOVER PARA LAS TARJETAS DE PRODUCTOS*/
+.content:hover {
+  -webkit-box-shadow: 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-transform: translate(0px, -8px);
+          transform: translate(0px, -8px);
+}
+
+.album {
+  background-color: #3d1f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+.album h1 {
+  padding-bottom: 1vw;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vh, 15vh);
+  letter-spacing: 1vw;
+  color: #d6994f;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+/*TEMPLATE PARA PONER TIRULOS ENTRE MEDIO DE LA PAGINA*/
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3d1f1f;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+  width: 100%;
+}
+
+.title h1 {
+  padding-bottom: 1vw;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vh, 15vh);
+  letter-spacing: 1vw;
+  color: #d6994f;
+}
+
+/* CSS PARA ACOMODAR LOS DETALLES DE LAS FECHAS DE TOUR, USANDO GRID*/
+.tour {
+  margin: 0;
+  background-color: #3d1f1f;
+}
+
+.tour__date {
+  background-color: #3d1f1f;
+  border-bottom: double 10px #dad099da;
+  display: -ms-grid;
+  display: grid;
+  padding-top: 25px;
+  padding-bottom: 0px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 0.1fr 1px 0.1fr;
+      grid-template-rows: 0.1fr 1px 0.1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+      grid-template-areas: "estado dash dash" "dash2 fecha boletos" "venue dash3 dash3";
+}
+
+.tour__date .estado {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: estado;
+}
+
+.tour__date .venue {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: venue;
+}
+
+.tour__date .dash {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: dash;
+}
+
+.tour__date .dash2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: dash2;
+}
+
+.tour__date .dash3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: dash3;
+}
+
+.tour__date .fecha {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: fecha;
+}
+
+.tour__date .boletos {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: boletos;
+}
+
+.tour__date p {
+  color: blanchedalmond;
+}
+
+/*A JUSTE CON MEDIA QUERIES PARA REACOMODAR LA INFORMACION DE LAS FECHAS DE TOUR*/
+@media only screen and (max-width: 699px) {
+  .tour__date {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 0.1fr 1px 0.1fr;
+        grid-template-rows: 0.1fr 1px 0.1fr;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        grid-template-areas: "estado dash" "venue  boletos" "fecha dash3";
+  }
+}
+
+/*HEADER Y REDES SOCIALES EN EL FONDO DE LA PANTALLA*/
+.redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #3d1f1f;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.redes a {
+  padding: 2rem;
+}
+
+.redes a img {
+  width: 100px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #ad5433;
+  width: 100vw;
+  height: 10rem;
+}
+
+footer p {
+  color: antiquewhite;
+  font-weight: 2px;
+  padding-left: 20px;
+}
+
+footer li {
+  list-style: none;
+  padding: 5px 0;
+}
+
+footer li a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.portada--2 {
+  height: 50vh;
+}
+
+.portada__overlay2 {
+  padding-inline: 10vw;
+  width: inherit;
+  height: inherit;
+  display: -ms-grid;
+  display: grid;
+  gap: 10vw;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "__img __titulo";
+  justify-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*# sourceMappingURL=main.css.map */
