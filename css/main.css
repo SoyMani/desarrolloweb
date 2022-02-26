@@ -24,7 +24,7 @@ body {
 
 h2 {
   padding-top: 20px;
-  font-size: clamp(10px, 30px, 35px);
+  font-size: clamp(10px, 25px, 35px);
   color: blanchedalmond;
 }
 
@@ -32,6 +32,10 @@ h2 {
 .barranav__img--logosize img {
   width: clamp(80px, 25vw, 200px);
   padding: 0.5vw 2vw 0.5vw 2vw;
+}
+
+.btn-pad {
+  padding-right: 10px;
 }
 
 /* flex-end PARA QUE TODOS LOS LINKS DE LA NavBar SE HAGAN A LA DERECHA*/
@@ -95,7 +99,7 @@ COLOR OVERLAY PARA QUE SE PUEDA VER LOS ELEMENTOS DE ARRIBA*/
   background: center center;
   background-size: 1700px;
   width: 100vw;
-  height: 90vh;
+  height: 85vh;
   overflow: hidden;
   /* MODIFICACIONES DE TODO EL TEXTO QUE ESTA EN LA PORTADA*/
 }
@@ -134,7 +138,7 @@ COLOR OVERLAY PARA QUE SE PUEDA VER LOS ELEMENTOS DE ARRIBA*/
 
 .portada__titulo--h1 {
   font-weight: 700;
-  font-size: clamp(20px, 55px, 56px);
+  font-size: clamp(15px, 55px, 56px);
   letter-spacing: 1vw;
   color: #d6994f;
 }
@@ -531,7 +535,17 @@ footer li a {
 }
 
 .portada--2 {
-  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: center center;
+  background-size: 1700px;
+  width: 100vw;
+  height: 85vh;
+  overflow: hidden;
 }
 
 .portada__overlay2 {
@@ -540,11 +554,123 @@ footer li a {
   height: inherit;
   display: -ms-grid;
   display: grid;
-  gap: 10vw;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "__img __titulo";
   justify-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*PAGINA DE CONTACTO*/
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 10vw;
+}
+
+.container:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 90vh;
+  background: url("../assets/contacto.png") center;
+  background-size: cover;
+  z-index: -1;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+}
+
+.contact-box {
+  max-width: 850px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 19px 5px #000008;
+          box-shadow: 0px 8px 19px 5px #000008;
+}
+
+.left {
+  height: 100%;
+  background: url("../assets/contacto.png") no-repeat center;
+  background-size: cover;
+}
+
+.right {
+  padding: 25px 48px;
+}
+
+h4 {
+  position: relative;
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+}
+
+h4:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 4px;
+  width: 58px;
+  border-radius: 2px;
+  background-color: #be7724;
+}
+
+.field {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background-color: rgba(230, 230, 230, 0.6);
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.field:hover {
+  background-color: rgba(247, 191, 88, 0.938);
+}
+
+.field:focus {
+  background-color: #fff;
+  border: 2px solid #fca31d;
+}
+
+.area {
+  min-height: 150px;
+}
+
+@media screen and (max-width: 880px) {
+  .contact-box {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .left {
+    height: 200px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

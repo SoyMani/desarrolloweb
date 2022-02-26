@@ -39,31 +39,46 @@
       <!--.navbar-expand{-sm|-md|-lg|-xl|-xxl} sirve para delimitar en que
             tamaño la barra se oculta--->
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand barranav__img barranav__img--logosize" href="#"
+        <a
+          class="navbar-brand barranav__img barranav__img--logosize"
+          href="../index.html"
           ><img src="../assets/theband-logo.png" alt=""
         /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+        <div class="btn-pad">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div>
             <!-- aria-current="page" sirve para mostrar de un color mas claro la pagina en
             la que estamos en el navBar-->
-            <a class="nav-link" href="../index.html">Inicio</a>
-            <a class="nav-link active" aria-current="page" href="./tour.html"
-              >Tour</a
-            >
-            <a class="nav-link" href="./merch.html">Merch</a>
-            <a class="nav-link" href="./lanzamientos.html">Lanzamientos</a>
-            <a class="nav-link" href="./contacto.html">Contacto</a>
+            <ul class="navbar-nav text-center">
+              <li><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./tour.html"
+                  >Tour</a
+                >
+              </li>
+              <li>
+                <a class="nav-link" href="./merch.html">Merch</a>
+              </li>
+              <li>
+                <a class="nav-link" href="./lanzamientos.html">Lanzamientos</a>
+              </li>
+              <li><a class="nav-link" href="./contacto.html">Contacto</a></li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -89,49 +104,65 @@
         <div class="dash2"><p></p></div>
         <div class="dash3"><p></p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="centerbtn">
         <h2>Más fechas por anunciar</h2>
@@ -139,10 +170,18 @@
     </div>
     <div>
       <section class="redes">
-        <a href=""><img src="../assets/facebook.png" /></a>
-        <a href=""><img src="../assets/instagram.png" /></a>
-        <a href=""><img src="../assets/youtube.png" /></a>
-        <a href=""><img src="../assets/spotify.png" /></a>
+        <a href="https://www.facebook.com/thebandtheband"
+          ><img src="../assets/facebook.png"
+        /></a>
+        <a href="https://www.instagram.com/theband/"
+          ><img src="../assets/instagram.png"
+        /></a>
+        <a href="https://www.youtube.com/user/TheBandOnMV"
+          ><img src="../assets/youtube.png"
+        /></a>
+        <a href="https://open.spotify.com/artist/4vpDg7Y7fU982Ds30zawDA"
+          ><img src="../assets/spotify.png"
+        /></a>
       </section>
       <footer>
         <div>
@@ -153,9 +192,13 @@
         </div>
         <div>
           <ul>
-            <li><a href="">Aviso de privacidad</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">Management</a></li>
+            <li>
+              <a href="https://council.rollingstone.com/privacy-policy"
+                >Aviso de privacidad</a
+              >
+            </li>
+            <li><a href="./contacto.html">Contacto</a></li>
+            <li><a href="./contacto.html">Management</a></li>
           </ul>
         </div>
       </footer>

@@ -37,10 +37,11 @@
       <!--.navbar-expand{-sm|-md|-lg|-xl|-xxl} sirve para delimitar en que
             tamaño la barra se oculta--->
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand barranav__img barranav__img--logosize" href="#"
+        <a class="navbar-brand barranav__img barranav__img--logosize" href="../index.html"
           ><img src="../assets/theband-logo.png" alt=""
         /></a>
-        <button
+        <div class="btn-pad">
+          <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -51,15 +52,26 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+        </div>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div>
             <!-- aria-current="page" sirve para mostrar de un color mas claro la pagina en
             la que estamos en el navBar-->
-            <a class="nav-link" href="../index.html">Inicio</a>
-            <a class="nav-link" href="./tour.html">Tour</a>
-            <a class="nav-link" href="./merch.html">Merch</a>
-            <a class="nav-link" href="./lanzamientos.html">Lanzamientos</a>
-            <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
+            <ul class="navbar-nav text-center">
+              <li><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li><a class="nav-link" href="./tour.html">Tour</a></li>
+              <li>
+                <a
+                  class="nav-link" href="./merch.html"
+                  >Merch</a
+                >
+              </li>
+              <li>
+                <a class="nav-link" href="./lanzamientos.html">Lanzamientos</a>
+              </li>
+              <li><a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a></li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -68,7 +80,7 @@
     <!--INICIO DE MAIN CON LA PORTADA-->
     <div class="portada2 portada--2" style="background-image: url('../assets/theband.jpg')">
       <!--AQUI USANDO UNAS CLASES DE BOOTSTRAP PARA GENERAR EL OVERLAY-->
-      <div class="portada__overlay justify-content-center align-items-center">
+      <div class="portada__overlay2 justify-content-center align-items-center">
         <div>
           <div class="portada__titulo">
             <h1 class="portada__titulo--h1">THE BAND <br>Contacto</h1>
@@ -76,12 +88,27 @@
         </div>
       </div>
     </div>
+    <div>
+      <div class="container" >
+        <div class="contact-box">
+          <div class="left"></div>
+            <div class="right">
+              <h4>Contactanos</h4>
+              <input type="text" class="field" placeholder="Nombre">
+              <input type="email" class="field" placeholder="E-mail">
+              <input type="text" class="field" placeholder="Telefono/WhatsApp">
+              <textarea class="field area" placeholder="Mensaje"></textarea>
+              <button class="btn">Enviar</button>
+            </div>
+          </div>
+        </div>
+    </div>
     <!--FINAL DEL DIV DE LA PORTADA-->
     <section class="redes">
-      <a href=""><img src="../assets/facebook.png" /></a>
-      <a href=""><img src="../assets/instagram.png" /></a>
-      <a href=""><img src="../assets/youtube.png" /></a>
-      <a href=""><img src="../assets/spotify.png" /></a>
+      <a href="https://www.facebook.com/thebandtheband"><img src="../assets/facebook.png" /></a>
+      <a href="https://www.instagram.com/theband/"><img src="../assets/instagram.png" /></a>
+      <a href="https://www.youtube.com/user/TheBandOnMV"><img src="../assets/youtube.png" /></a>
+      <a href="https://open.spotify.com/artist/4vpDg7Y7fU982Ds30zawDA"><img src="../assets/spotify.png" /></a>
     </section>
       <footer>
         <div>
@@ -92,9 +119,9 @@
         </div>
         <div>
           <ul>
-            <li><a href="">Aviso de privacidad</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">Management</a></li>
+            <li><a href="https://council.rollingstone.com/privacy-policy">Aviso de privacidad</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+            <li><a href="./contacto.html">Management</a></li>
           </ul>
         </div>
       </footer>

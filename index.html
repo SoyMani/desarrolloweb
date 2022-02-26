@@ -44,30 +44,45 @@
             alt="Logo de The Band en blanc"
             o
         /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+        <div class="btn-pad">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div>
             <!-- aria-current="page" sirve para mostrar de un color mas claro la pagina en
             la que estamos en el navBar-->
-            <a class="nav-link active" aria-current="page" href="./index.html"
-              >Inicio</a
-            >
-            <a class="nav-link" href="./pages/tour.html">Tour</a>
-            <a class="nav-link" href="./pages/merch.html">Merch</a>
-            <a class="nav-link" href="./pages/lanzamientos.html"
-              >Lanzamientos</a
-            >
-            <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+            <ul class="navbar-nav text-center">
+              <li>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li><a class="nav-link" href="./pages/tour.html">Tour</a></li>
+              <li>
+                <a class="nav-link" href="./pages/merch.html">Merch</a>
+              </li>
+              <li>
+                <a class="nav-link" href="./pages/lanzamientos.html"
+                  >Lanzamientos</a
+                >
+              </li>
+              <li>
+                <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -89,7 +104,11 @@
             <h1 class="portada__titulo--h1">THE BAND</h1>
             <h2 class="portada__titulo--h2">Greatest Hits</h2>
             <h3 class="portada__titulo--h3">¡Disponible ahora!</h3>
-            <a class="btn" href="">¡Stream now!</a>
+            <a
+              class="btn"
+              href="https://www.youtube.com/watch?v=FFqb1I-hiHE&list=PLeYMPA41NfUuJWsZ2NO0knntGjr6vtX-H&ab_channel=ChrisAwad"
+              >¡Stream now!</a
+            >
           </div>
         </div>
       </div>
@@ -106,7 +125,11 @@
             src="./assets/album-cover.jpg"
             alt="Portada del Album homonimo de la banda The Band"
           />
-          <a class="btn" href="">¡Escuchar ahora!</a>
+          <a
+            class="btn"
+            href="https://open.spotify.com/album/4vXFiaDS8zuEl5bOUbW53x?si=Q9h2qHyRTGelWcKtCIDgZw"
+            >¡Escuchar ahora!</a
+          >
         </div>
         <div class="ultimolanzamiento__review review">
           <!--CONTENEDOR DE EL REVIEW DEL ALBUM EN LA SECCIÓN 1-->
@@ -173,7 +196,9 @@
         <button class="buy">Comprar</button>
       </div>
     </div>
-    <div class="album"><a class="btn" href="">Ir a tienda completa</a></div>
+    <div class="album">
+      <a class="btn" href="./pages/merch.html">Ir a tienda completa</a>
+    </div>
     <div class="title"><h1>Proximas Fechas</h1></div>
     <div class="tour">
       <div class="tour__date">
@@ -183,34 +208,44 @@
         <div class="dash2"><p></p></div>
         <div class="dash3"><p></p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://www.ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://www.ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="tour__date">
         <div class="estado"><p>Estado, MX</p></div>
         <div class="venue"><p>The Venue</p></div>
         <div class="fecha"><p>01 Enero 2022</p></div>
-        <div class="boletos"><a class="btn" href="">Boletos</a></div>
+        <div class="boletos">
+          <a class="btn" href="https://www.ticketmaster.com/">Boletos</a>
+        </div>
       </div>
       <div class="centerbtn">
-        <a class="btn" href="">Más Fechas</a>
+        <a href="pages/tour.html" class="btn" href="">Más Fechas</a>
       </div>
     </div>
     <div>
       <section class="redes">
-        <a href=""
-          ><img src="./assets/facebook.png" alt="Logo de facebook"
+        <a href="https://www.facebook.com/thebandtheband"
+          ><img src="../assets/facebook.png"
         /></a>
-        <a href=""
-          ><img src="./assets/instagram.png" alt="logo de instagram"
+        <a href="https://www.instagram.com/theband/"
+          ><img src="../assets/instagram.png"
         /></a>
-        <a href=""><img src="./assets/youtube.png" alt="logo de Youtube" /></a>
-        <a href=""><img src="./assets/spotify.png" alt="logo de spotify" /></a>
+        <a href="https://www.youtube.com/user/TheBandOnMV"
+          ><img src="../assets/youtube.png"
+        /></a>
+        <a href="https://open.spotify.com/artist/4vpDg7Y7fU982Ds30zawDA"
+          ><img src="../assets/spotify.png"
+        /></a>
       </section>
       <footer>
         <div>
@@ -221,9 +256,13 @@
         </div>
         <div>
           <ul>
-            <li><a href="">Aviso de privacidad</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">Management</a></li>
+            <li>
+              <a href="https://council.rollingstone.com/privacy-policy"
+                >Aviso de privacidad</a
+              >
+            </li>
+            <li><a href="./pages/contacto.html">Contacto</a></li>
+            <li><a href="./pages/contacto.html">Management</a></li>
           </ul>
         </div>
       </footer>
